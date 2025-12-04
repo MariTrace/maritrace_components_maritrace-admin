@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: maritrace-admin
+  labels:
+    app: maritrace-admin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: maritrace-admin
+  template:
+    metadata:
+      labels:
+        app: maritrace-admin
+    spec:
+      tolerations:
+        - key: "type"
+          operator: "Equal"
+          value: "maritrace-3"
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: "type"
+                    operator: In
+                    values:
+                      - "maritrace-3"
+      containers:
+        - name: maritrace-admin
+          image: 678939288571.dkr.ecr.eu-west-1.amazonaws.com/maritrace-admin:0.2.7
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "200m"
+            limits:
+              memory: "1024Mi"
+              cpu: "400m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: maritrace-admin-loadbalancer
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-d18eeab7,subnet-10007758,subnet-8de243d7"
+    service.beta.kubernetes.io/aws-load-balancer-internal: "false"
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: "arn:aws:acm:eu-west-1:678939288571:certificate/e28cef4a-34a5-4831-bc50-2bc9a2372847"
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: "http"
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "443"
+  labels:
+    app: maritrace-admin
+spec:
+  type: LoadBalancer
+  selector:
+    app: maritrace-admin
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+    - name: https
+      protocol: TCP
+      port: 443
+      targetPort: 80

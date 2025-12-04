@@ -1,0 +1,91 @@
+.edit_parent_tabs_cont {
+    position:relative;
+}
+.edit_parent_tabs_cont #main_submit,
+.edit_parent_tabs_cont #mobile_submit{
+    float: right;
+    margin: 0 0px 10px 0;
+}
+.edit_parent_tabs_cont #mobile_submit{ display:none; }
+.edit_parent_tabs_cont #mobile_burger{
+    display:none;
+    position: absolute;
+    top:0px;
+    right:10px;
+}
+.edit_parent_tabs_cont #mobile_burger Button{
+    float:right;
+    width:30px;
+    height:30px;
+    border:1px solid;
+    border-radius:5px;
+    font-size:18px;
+}
+.edit_parent_tabs_cont #navbarNav .nav{
+    float: left;
+    width: 100% !important;
+    max-width: 130px;
+}
+
+.edit_parent_add_user_cont .split_checkboxes {
+    float:left;
+    width:100%;
+    max-width: 50%;
+}
+.edit_parent_add_user_cont label{
+    float:left;
+    width:100%;
+    max-width:180px;
+}
+.edit_parent_add_user_cont .split_checkboxes .col-sm-8{
+    float:left;
+    max-width:50px;
+}
+.edit_parent_add_user_cont .form-check-input[type=checkbox]{
+    margin-top:10px;
+}
+.add_multiple_users td input{
+
+}
+
+#edit_account_page .multiple_users_settings{
+    margin-top:20px;
+}
+
+#edit_account_page .tab-content {
+    width:calc(100% - 120px);
+    padding: 0 10px;
+}
+
+@media (max-width: 992px) {
+   .edit_parent_tabs_cont .container .left, .edit_parent_tabs_cont .container .right {
+        max-width:calc(100% - 80px);
+   }
+}
+
+@media (max-width: 768px) {
+    .edit_parent_tabs_cont #mobile_burger{
+        display:none;
+    }
+    #navbarNav, .edit_parent_tabs_cont #navbarNav .nav{
+        width:100%;
+        max-width:300px;
+        position:absolute;
+        left:calc(50% - 150px);
+        top:0;
+        background-color:#fff;
+        z-index:100;
+    }
+    .edit_parent_tabs_cont #mobile_burger{
+        display:block;
+    }
+    .edit_parent_tabs_cont{
+        padding-top:40px;
+    }
+    .edit_parent_add_user_cont label {
+        max-width:170px;
+    }
+
+    .edit_parent_tabs_cont #mobile_submit{ display:block; }
+    .edit_parent_tabs_cont #main_submit{ display:none; }
+}

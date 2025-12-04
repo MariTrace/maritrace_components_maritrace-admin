@@ -1,0 +1,404 @@
+@import '~@fortawesome/fontawesome-svg-core/styles.css';
+h, p, div, a{
+    /*font-family:raleway,sans-serif;*/
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size:14px;
+}
+body, header, h, a, p, div, span, ul, li{
+    font-family: -apple-system, BlinkMacSystemFont, 'Poppins', sans-serif;
+    margin:0 0 0 0;
+    padding:0 0 0 0;
+    color:#212529;
+}
+a{
+    color:#007bff;
+}
+
+#updating_loading_panel{
+    position:fixed;
+    bottom:50px;
+    right:50px;
+    z-index:100;
+}
+
+.clearBoth{
+    float:left;
+    width:100%;
+    clear:both;
+}
+.element_loading_container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*background-color: #ffffff; /* Black with 25% opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999; /* Ensure it's on top */
+}
+.element_loading_container .icon_cont,.element_loading_container .icon_cont .fa-arrows-rotate{
+    color:#0670cd;
+    width:26px;
+    height:26px;
+}
+.element_loading_container .icon_cont {
+    animation: rotate 0.9s linear infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.refresh_button{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index:100;
+    cursor:pointer;
+}
+/*
+    1.LOGIN PAGE
+    2.MAIN PAGE
+    3.MODAL CSS
+    4.GENERAL
+*/
+
+.page_container .header{
+    float:left;
+    width:calc(100% - 20px);
+    margin:0 10px;
+    border-bottom:#000 1px solid;
+    padding-bottom:1.8em;
+}
+
+.page_container .header .logo{
+    float:left;
+    width:100%;
+    max-width:300px;
+    margin-top:2em;
+    max-width:300px;
+}
+.page_container .header p {
+    float:left;
+    font-size:1.2em;
+    margin:3em 0 0 1em;
+}
+
+/*  1.LOGIN PAGE  */
+#login_page h1{
+    float:left;
+    width:100%;
+    clear:both;
+    font-size:3em;
+    line-height:1.5em;
+    color:rgb(0,47,119);
+    margin-top:1.8em;
+    text-transform: uppercase;
+    text-align:center;
+}
+
+#login_page #login_cont{
+    float:none;
+    clear:both;
+    margin-left:auto;
+    margin-right:auto;
+    max-width:930px;
+    margin-top:30px;
+    padding-top:25px;
+}
+
+#login_page #login_cont .text{
+    text-align: center;
+    font-size: 15px;
+    line-height:32px;
+}
+
+#login_page #login_cont form{
+    float:none;
+    max-width:410px;
+    margin:0px auto 0 auto;
+}
+#login_cont form .input_label{
+    float:left;
+    color:#333;
+    font-size:1.4em;
+    line-height:24px;
+    padding:10px 0;
+    margin:10px 0 0 0;
+}
+#login_cont form input{
+    clear:both;
+    width:100%;
+    max-width:calc(410px - 0px);
+    height:36px;
+    padding:5px;
+    border:#adadad 1px solid;
+    background-color:#fff;
+}
+#login_cont form input[type=submit]{
+    float:right;
+    width:auto;
+    height:40px;
+    padding:0px 30px;
+    margin: 10px 0 0 0;
+    color:#333;
+    font-size:1.2em;
+    line-height:36px;
+    background:none;
+}
+#login_cont #login_form .link{
+    float:right;
+    clear:both;
+    margin-top:1em;
+}
+#tabs_container{
+    margin-top:20px;
+}
+.container .left, .container .right{
+    float:left;
+    width:100%;
+    max-width:calc(50% - 40px);
+    margin:0 10px 0 10px;
+}
+.container .table{
+    max-width:100%;
+}
+
+/*    2.MAIN PAGE   */
+
+#main_page.page_container .header{
+    padding-bottom:0;
+}
+
+#main_page.page_container .header .header_inner_cont{
+    float:left;
+    margin-bottom:40px;
+    clear:both;
+}
+#main_page #tabs_container{
+    clear:both;
+}
+#main_page #tabs_container.container{
+    padding: 0 0;
+}
+#main_page .container{
+    padding: 20px 0;
+    clear:both;
+}
+#main_page .container h1.page_title {
+    float:left;
+    width: 100%;
+    font-size: 2rem;
+    color: #002f77;
+    clear:both;
+}
+#main_page .container h2.sub_title {
+    float:left;
+    width: 100%;
+    font-size: 1.5rem;
+    color: #002f77;
+    margin:10px 0 10px 0;
+}
+#main_page .container .filter_container{
+    float:right;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-family: system-ui, sans-serif;
+    font-size: 14px;
+}
+
+#main_page .filter_columns,
+#main_page .filter_value {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#main_page .custom-table_cont{
+    float:left;
+    width:100%;
+    max-width:100%;
+    overflow-x: scroll;
+}
+#main_page .custom-table_cont .sortable_column{
+    cursor:pointer;
+}
+#main_page .custom-table_cont .sorting_arrow{
+    float:right;
+}
+
+#main_page .custom-table_cont .action_buttons,
+#main_page .custom-table_cont .action_buttons2{
+    font-size: 14px;
+    padding: 5px;
+    line-height: 16px;
+    background-color: #0070d9;
+    color: #fff;
+}
+#main_page .child-table{
+    width:100%;
+}
+/*#main_page .custom-table_cont .action_buttons2{
+    background-color: #0070d9;
+}*/
+#main_page .custom-table_cont .action_buttons:hover,
+#main_page .custom-table_cont .action_buttons2:hover{
+    background-color: #0046aa;
+}
+#main_page .custom-table_cont .action_buttons:active,
+#main_page .custom-table_cont .action_buttons2:active{
+    background-color: #002f77;
+}
+#main_page .custom-table_cont .button_left_margin{
+    margin-left:5px;
+}
+.clickToCopyText {
+    cursor: pointer;
+}
+.clickToCopyText:active {
+    border-color:#002f77 !important;
+}
+
+@media (max-width: 900px) {
+    .container .left, .container .right{
+        max-width:100%;
+    }
+}
+
+/* 5.NOTIFICATIONS */
+.smallNotification, .smallNotification .container{
+    max-width:340px;
+}
+.smallNotification .popup-body{
+    height:auto;
+    min-height:80px;
+    padding-bottom:10px;
+}
+
+#updating_loading_panel{
+    position:fixed;
+    bottom:50px;
+    right:50px;
+}
+.sharing_target_table{
+    max-height:250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sharing_target_table td{
+    padding:5px;
+}
+
+.sharingTarget_greyed_row td, tr.sharingTarget_greyed_row:hover{
+    color : #bababa;
+    background-color:#fff;
+    box-shadow:none;
+}
+.sharingTarget_greyed_row button{
+    background:#ccc;
+}
+
+td.truncate {
+  max-width: 200px;    /* or any fixed width you want */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Notification */
+.popup-content {
+    width:100%;
+}
+.popup-container {
+  float:left;
+  padding: 0 0 10px 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius:5px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup-header {
+  float:left;
+  width:100%;
+  max-width: 100%;
+  height:54px;
+  line-height:54px;
+  margin-bottom: 10px;
+  border-bottom: #dfe1e5 1px solid;
+}
+.popup-header .title{
+    float:left;
+}
+.popup-header .close_icon{
+    float:right;
+}
+.popup-header .close_icon button, .popup-header .close_icon button:hover{
+    float:right;
+    color:#212529;
+    border:none;
+    font-size: 22px;
+    line-height: 34px;
+    background:none;
+    padding: 0 6px 0 6px;
+    margin: 10px 0 10px 0;
+}
+.popup-header h3{
+    float:left;
+    width:100%;
+    max-width:calc(100% - 40px);
+    font-size:20px;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    line-height: 54px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.popup-body {
+    float:left;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    height: 300px;
+    max-width: 100%;
+    overflow-y: auto;
+}
+.popup-footer{
+    float:left;
+    border-top:#dfe1e5 1px solid;
+    text-align:right;
+    padding-top:10px;
+    max-width: 100%;
+}
+
+.popup-footer button{
+  float:right;
+  margin: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.custom-table_cont .export_cont{
+    clear:both;
+    padding-top:20px;
+}
+
+.date_picker_container .errorText{
+    float:left;
+    color:#FF0000;
+}
+.clearBoth{
+    clear:both;
+}
